@@ -132,12 +132,20 @@
                             }
                         </style>
                     <?php } ?>
+                        <div style="display: inline" class="menu-assessment cc pull-left">
+                            CARBON COOP
+                        </div>
                     <?php
                         echo $mainmenu;
                     ?>
+                    <?php if($session['read']){ ?>
+                        <div style="display: inline" class="menu-assessment pull-right">
+                            <a href="<?php echo $path ?>/user/view">Account</a>
+                        </div>
                         <div style="display: inline" class="menu-assessment pull-right">
                             <a href="<?php echo $path ?>assessment/list">Assessments</a>
                         </div>
+                    <?php } ?>
                     <?php
                         if ($menucollapses) {
                     ?>
@@ -183,5 +191,13 @@
             <span> | <a href="https://github.com/emoncms/emoncms/releases"><?php echo $emoncms_version; ?></a></span>
         </div>
         <script type="text/javascript" src="<?php echo $path; ?>Lib/bootstrap/js/bootstrap.js"></script>
+        <script>
+            <?php if(!$session['read']){ ?>
+                $( document ).ready(function() {
+                    $('.span12').attr('style',"background-image:url('<?php echo $path ?>Theme/CCoop/background.jpg'); background-repeat: no-repeat; width:100%; background-size:1200px; background-position: center; ");
+                    $('.main .well').prepend('<h2>Login</h2><p>My Home Energy Planner</p>');
+                });
+             <?php } ?>
+        </script>
     </body>
 </html>
