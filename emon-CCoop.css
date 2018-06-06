@@ -52,6 +52,13 @@ h1 {
     color: #ff2712 !important;
 }
 
+h2 { 
+    color: #ff2712 !important;
+    font-size:25px;
+    line-height: 22px;
+    margin-bottom: 25px;
+}
+
 h3 { 
     color: #ff2712 !important;
     font-size:20px;
@@ -74,4 +81,9 @@ hr {
 
 img[alt="Login"]{
     display:none;
+}
+
+.scenario-name{
+    background-color: white;
+    padding:25px 0 1px 25px;
 }

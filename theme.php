@@ -189,6 +189,7 @@
             <?php echo _('Powered by '); ?>
             <a href="http://openenergymonitor.org">OpenEnergyMonitor.org</a>
             <span> | <a href="https://github.com/emoncms/emoncms/releases"><?php echo $emoncms_version; ?></a></span>
+            <p>Carbon Co-op's <a href='https://carbon.coop/privacy' target='blank'>privacy policy</a> </p>
         </div>
         <script type="text/javascript" src="<?php echo $path; ?>Lib/bootstrap/js/bootstrap.js"></script>
         <script>
