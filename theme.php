@@ -49,6 +49,7 @@
         $nbshortcuts4 = 0;
         $nbshortcuts5 = 0;
 
+        /*
         foreach($menu['dashboard'] as $item){
            if(isset($item['name'])){$name = $item['name'];}
            if(isset($item['published'])){$published = $item['published'];} //only published dashboards
@@ -81,6 +82,8 @@
            $sumlength5 += strlen($name);
            $nbshortcuts5 ++;
        }
+         
+         */
     $maxwidth1=intval((($sumlength1+$sumlength2+$sumlength3+$sumlength4+$sumlength5)+($nbshortcuts1+$nbshortcuts2+$nbshortcuts3+$nbshortcuts4+$nbshortcuts5+1)*6)*85/9);
     $maxwidth2=intval(($nbshortcuts1+$nbshortcuts2+$nbshortcuts3+$nbshortcuts4+$nbshortcuts5+3)*6*75/9);
     if($maxwidth2>$maxwidth1){$maxwidth2=$maxwidth1-1;}
@@ -88,6 +91,30 @@
 ?>
 
         <script type="text/javascript" src="<?php echo $path; ?>Lib/jquery-1.11.3.min.js"></script>
+            <script>
+        window.onerror = function(msg, source, lineno, colno, error) {
+            // return false;
+            if (msg.toLowerCase().indexOf("script error") > -1) {
+                alert('Script Error: See Browser Console for Detail');
+            }
+            else {
+                var messages = [
+                    'EmonCMS Error',
+                    '-------------',
+                    'Message: ' + msg,
+                    'Route: ' + source.replace('<?php echo $path; ?>',''),
+                    'Line: ' + lineno,
+                    'Column: ' + colno
+                ];
+                if (Object.keys(error).length > 0) {
+                    messages.push('Error: ' + JSON.stringify(error));
+                }
+                alert(messages.join("\n"));
+            }
+            return true; // true == prevents the firing of the default event handler.
+        }
+        var path = "<?php echo $path ?>";
+    </script>
     </head>
     <body>
         <div id="wrap">
@@ -139,6 +166,9 @@
                         echo $mainmenu;
                     ?>
                     <?php if($session['read']){ ?>
+                        <div style="display: inline" class="menu-assessment pull-right">
+                            <a href="<?php echo $path ?>user/logout">Logout</a>
+                        </div>
                         <div style="display: inline" class="menu-assessment pull-right">
                             <a href="<?php echo $path ?>/user/view">Account</a>
                         </div>
