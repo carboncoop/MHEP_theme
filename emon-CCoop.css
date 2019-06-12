@@ -87,3 +87,7 @@ img[alt="Login"]{
     background-color: white;
     padding:25px 0 1px 25px;
 }
+
+#left-nav, #right-nav{
+    display:none
+}
