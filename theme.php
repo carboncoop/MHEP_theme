@@ -167,7 +167,7 @@
                     ?>
                     <?php if($session['read']){ ?>
                         <div style="display: inline" class="menu-assessment pull-right">
-                            <a href="<?php echo $path ?>user/logout">Logout</a>
+                            <a href="<?php echo $path ?>user/logout" id="logout-link">Logout</a>
                         </div>
                         <div style="display: inline" class="menu-assessment pull-right">
                             <a href="<?php echo $path ?>/user/view">Account</a>
