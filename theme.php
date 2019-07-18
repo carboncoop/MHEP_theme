@@ -162,9 +162,6 @@
                         <div style="display: inline" class="menu-assessment cc pull-left">
                             CARBON COOP
                         </div>
-                    <?php
-                        echo $mainmenu;
-                    ?>
                     <?php if($session['read']){ ?>
                         <div style="display: inline" class="menu-assessment pull-right">
                             <a href="<?php echo $path ?>user/logout" id="logout-link">Logout</a>
